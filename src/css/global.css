@@ -1,0 +1,163 @@
+:root {
+  /* === CORES === */
+  /* Cores principais */
+  --background-color: #f1e5e7;
+  --color-pink: #ef0b5d;
+  --color-pink-primary: #FF0066;
+  --color-pink-secondary: #E91E63;
+  --color-pink-hover: #C2185B;
+  --color-pink-light: #FF6B6B;
+  --color-orange: #ee8f21;
+  --color-orange-primary: #FF8C42;
+  --color-beige: #fae1c8;
+  --color-beige-light: #F5E6D3;
+  
+  /* Cores de texto */
+  --color-text-dark-bg: #ffffff;
+  --color-text-light-bg: #2C2C2C;
+  --color-text-primary: #333;
+  --color-text-secondary: #444;
+  --color-text-placeholder: #7D7D7D;
+  --color-text-placeholder-light: #999;
+  
+  /* Cores de fundo */
+  --color-bg-white: #ffffff;
+  --color-bg-light-gray: #f5f5f5;
+  --color-bg-border-gray: #ddd;
+  
+  /* Cores de estado */
+  --color-error: #d32f2f;
+  
+  /* Sombras */
+  --shadow-xs: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+  /* === ESPAÇAMENTOS === */
+  /* Padding e Margin */
+  --spacing-xs: 0.2rem;
+  --spacing-sm: 0.3rem;
+  --spacing-md: 0.5rem;
+  --spacing-lg: 0.8rem;
+  --spacing-xl: 1rem;
+  --spacing-2xl: 1.2rem;
+  --spacing-3xl: 1.5rem;
+  --spacing-4xl: 2rem;
+  
+  /* Espaçamentos em pixels */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-60: 60px;
+  
+  /* Gap */
+  --gap-xs: 0.2rem;
+  --gap-sm: 0.3rem;
+  --gap-md: 0.5rem;
+  --gap-lg: 0.8rem;
+  --gap-xl: 1rem;
+  --gap-2xl: 2rem;
+  --gap-8: 8px;
+  --gap-12: 12px;
+  --gap-20: 20px;
+  
+  /* === TAMANHOS DE FONTE === */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8rem;
+  --font-size-md: 0.85rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.8rem;
+  --font-size-4xl: 2rem;
+  --font-size-5xl: 3rem;
+  
+  /* Tamanhos especiais */
+  --font-size-button: 0.95rem;
+  --font-size-rating: 0.9rem;
+  
+  /* === DIMENSÕES === */
+  /* Larguras */
+  --width-button: 40px;
+  --width-card: 180px;
+  --width-card-max: 220px;
+  --width-image: 300px;
+  --width-container: 1040px;
+  --width-container-lg: 1400px;
+  --width-full: 100%;
+  
+  /* Alturas */
+  --height-button: 40px;
+  --height-footer-min: 40px;
+  --height-full: 100%;
+  --header-height: 100px;
+  --footer-height: 50px;
+  
+  /* === BORDER RADIUS === */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-full: 20px;
+  
+  /* === TRANSIÇÕES === */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+  --transition-ease: ease-in-out;
+  
+  /* === LINE HEIGHT === */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.7;
+  
+  /* === FONT WEIGHT === */
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: bold;
+}
+
+[data-theme="dark"] {
+  /* === CORES (Modo Escuro) === */
+  --background-color: #1a1a1a;
+  --color-pink: #ff1a75;
+  --color-pink-primary: #FF0066;
+  --color-pink-secondary: #E91E63;
+  --color-pink-hover: #C2185B;
+  --color-pink-light: #FF6B6B;
+  --color-orange: #ff8c00;
+  --color-orange-primary: #FF8C42;
+  --color-beige: #2a2a2a;
+  --color-beige-light: #2a2a2a;
+  --color-text-dark-bg: #ffffff;
+  --color-text-light-bg: #ffffff;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e0e0e0;
+  --color-text-placeholder: #a0a0a0;
+  --color-text-placeholder-light: #999;
+  --color-bg-white: #2a2a2a;
+  --color-bg-light-gray: #333;
+  --color-bg-border-gray: #444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
