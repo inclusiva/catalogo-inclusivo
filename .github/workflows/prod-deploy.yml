@@ -1,0 +1,48 @@
+name: Production Deploy
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: prod
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://catalogo-inclusivo.netlify.app
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync production branch with main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin
+
+          # Cria ou atualiza a branch production
+          if git ls-remote --exit-code --heads origin production; then
+            git checkout -B production origin/production
+          else
+            git checkout -B production
+          fi
+
+          # Sincroniza com a branch main (ou staging se preferir)
+          git reset --hard origin/main
+          git push origin production --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to Production
+        run: |
+          echo "✅ Branch production atualizada com sucesso!"
+          echo "📦 Commit: $(git rev-parse HEAD)"
+          echo "🚀 O Netlify iniciará o build e deployment automaticamente."
+          echo "📊 Verifique o status em: https://app.netlify.com"
