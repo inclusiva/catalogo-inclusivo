@@ -1,24 +1,21 @@
 :root {
   /* === CORES === */
   /* Cores principais */
-  --background-color: #f1e5e7;
-  --color-pink: #ef0b5d;
-  --color-pink-primary: #FF0066;
-  --color-pink-secondary: #E91E63;
-  --color-pink-hover: #C2185B;
-  --color-pink-light: #FF6B6B;
-  --color-orange: #ee8f21;
-  --color-orange-primary: #FF8C42;
-  --color-beige: #fae1c8;
-  --color-beige-light: #F5E6D3;
+  --background-color: #f1e5e7; /*Cor de fundo*/
+  --color-footer: #ef0b5d; /* Rodape*/ 
+  --color-card-base: #ef0b5d; /* Espaço de descrição do card */
+  --color-card-backgroung: #fae1c8; /* Fundo do card */
+  --color-grad-begin: #ED911F; /* Cor de inicio do gradient*/
+  --color-grad-end: #EF0B5D; /* Cor final do gradient*/
+  --color-principal-hover: #C2185B; /* Ao acessar botão */
+  --color-rating: #ED911F;
+  --gradient: linear-gradient(to left, var(--color-grad-begin), var(--color-grad-end)); /* Header e Botão Buscar */
   
   /* Cores de texto */
-  --color-text-dark-bg: #ffffff;
-  --color-text-light-bg: #2C2C2C;
-  --color-text-primary: #333;
-  --color-text-secondary: #444;
-  --color-text-placeholder: #7D7D7D;
-  --color-text-placeholder-light: #999;
+  --color-text-header: #FFFFFF; /*Catalogo Inclusivo*/
+  --color-text-primary: #ef0b5d; /*Titulos*/
+  --color-text-secondary: #2C2C2C; /* Corpo de texto*/
+  --color-text-placeholder: #7D7D7D; /*Texto caixa de busca*/
   
   /* Cores de fundo */
   --color-bg-white: #ffffff;
@@ -123,24 +120,27 @@
 }
 
 [data-theme="dark"] {
+
   /* === CORES (Modo Escuro) === */
-  --background-color: #1a1a1a;
-  --color-pink: #ff1a75;
-  --color-pink-primary: #FF0066;
-  --color-pink-secondary: #E91E63;
-  --color-pink-hover: #C2185B;
-  --color-pink-light: #FF6B6B;
-  --color-orange: #ff8c00;
-  --color-orange-primary: #FF8C42;
-  --color-beige: #2a2a2a;
-  --color-beige-light: #2a2a2a;
-  --color-text-dark-bg: #ffffff;
-  --color-text-light-bg: #ffffff;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #e0e0e0;
-  --color-text-placeholder: #a0a0a0;
-  --color-text-placeholder-light: #999;
-  --color-bg-white: #2a2a2a;
+ 
+    --background-color: #3F3C41; /*Cor de fundo*/
+  --color-footer: #525252; /* Rodape*/ 
+  --color-card-base: #0F56A2; /* Espaço de descrição do card */
+  --color-card-backgroung: #1E1E1E; /* Fundo do card */
+  --color-grad-begin: #0F56A2; /* Cor de inicio do gradient*/
+  --color-grad-end: #EF0B5D; /* Cor final do gradient*/
+  --color-principal-hover: #0F56A2; /* Ao acessar botão */
+  --color-rating: #ED911F; /*Classificação em estrelas*/
+  --gradient: linear-gradient(to left, var(--color-grad-begin), var(--color-grad-end)); /* Header e Botão Buscar */
+
+  /* Cores de texto */
+  --color-text-header: #FFFFFF; /*Catalogo Inclusivo*/
+  --color-text-primary: #D8D8D8; /*Titulos*/
+  --color-text-secondary: #D8D8D8; /* Corpo de texto*/
+  --color-text-placeholder: #7D7D7D; /*Texto caixa de busca*/
+
+/* Cores de fundo */
+  --color-bg-white: #525252;
   --color-bg-light-gray: #333;
   --color-bg-border-gray: #444;
 }
