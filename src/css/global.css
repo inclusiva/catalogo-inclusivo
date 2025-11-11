@@ -161,3 +161,26 @@ html, body {
   width: 100%;
   max-width: 100%;
 }
+
+.card {
+
+  width: 227px;
+  height: 306px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-card-backgroung);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-footer {
+  background-color: var(--color-card-base);
+  width: 227px;
+  height: 49px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--color-text-header);
+  font-size: var(--font-weight-bold);
+  
+}
