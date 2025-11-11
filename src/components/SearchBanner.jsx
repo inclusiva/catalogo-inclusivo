@@ -19,3 +19,5 @@ const SearchBanner = ({ value, onChange, onclick }) => {
         </section>
     );
 };
+
+export default SearchBanner;
