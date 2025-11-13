@@ -162,25 +162,53 @@ html, body {
   max-width: 100%;
 }
 
-.card {
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-xl); 
+  justify-content: center; 
+  max-width: var(--width-container-lg);
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+}
 
-  width: 227px;
-  height: 306px;
+.card {
+  width: var(--width-card);
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--color-card-backgroung);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-xl);
+  flex: 0 0 auto;
 }
 
 .card-footer {
   background-color: var(--color-card-base);
-  width: 227px;
-  height: 49px;
+  width: var(--width-card);
+  height: 40px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: var(--color-text-header);
-  font-size: var(--font-weight-bold);
-  
+  font-size: var(--font-weight-bold); 
+  z-index: 99;
 }
+
+.img-test {
+  width: var(--width-card);
+}
+
+.card:hover {
+  .card-footer {
+    background-color: var(--color-principal-hover);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: var(--width-card);
+    height: auto;
+  }
+}
+
