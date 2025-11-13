@@ -1,7 +1,9 @@
 export default function Header() {
     return (
         <header>
-            <h1>Catálogo Inclusiva</h1>
+            <link to="/">
+            <img src="/logo-gradiante.svg" alt="logo" />
+            </link>
             <ThemeToggle />
         </header>
     )

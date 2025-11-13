@@ -15,20 +15,11 @@ export default function ThemeToggle(){
     }, []);
 
     const isDark = currentTheme === 'dark';
-    const icon = isDark ? '🌙' : '☀️';
+    const icon = isDark ? '/lua-branca.svg' : '/sol-branco.svg';
     const altText = isDark ? 'Dark Mode' : 'Light Mode';
 
     return (
-        <button onClick={handleToggleTheme}
-            style={{
-                padding: '10px 15px', 
-                cursor: 'pointer', 
-                fontSize: '1rem',
-                border: '1px solid currentColor',
-                background: 'transparent',
-                borderRadius: '5px'
-            }}
-        aria-label={altText}>
+        <button onClick={handleToggleTheme}  aria-label={altText}>
             {icon}
         </button>
     );
