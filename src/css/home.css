@@ -1,0 +1,28 @@
+.banner {
+  width: var(--width-container);
+  background-color: var(--color-card-background);
+  margin: auto;
+  
+  
+}
+.banner-titulo {
+ padding: 5px;
+ color: var(--color-text-primary);
+ font-size: var(--font-size-xl);
+}
+.banner-subtitulo {
+  margin:0;
+  padding: 2px;
+  color: var(--color-text-primary);
+  font-size: var( --font-size-base);
+
+}
+.area-busca {
+  padding:15px;
+  width: var(--width-container);
+  background-color: var( --color-card-background);
+
+}
+.text {
+ color: var( --color-text-placeholde);
+}
