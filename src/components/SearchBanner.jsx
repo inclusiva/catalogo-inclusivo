@@ -1,6 +1,4 @@
-import React from "react";
-
-const SearchBanner = ({ value, onChange, onClick }) => {
+function SearchBanner ({ value, onClick, onChange })  {
     return (
         <section className= "banner">
             <h1 className="banner-titulo">Bem-vindo (a)</h1>
@@ -15,7 +13,6 @@ const SearchBanner = ({ value, onChange, onClick }) => {
                 <button onClick={onClick} className="busca-botao">Buscar</button>
                 
                 </div>
-
         </section>
     );
 };
