@@ -5,8 +5,8 @@ export default function MovieDetailCard({ movie }) {
 
     const {
         poster_path,
-        title = "Titulo do filme",
-        overview = "Descrição não disponíveel",
+        title = "Título do filme",
+        overview = "Descrição não disponível",
         vote_average,
         genres = [],
     } = movie;
