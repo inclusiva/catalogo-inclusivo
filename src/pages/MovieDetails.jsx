@@ -19,7 +19,7 @@ export default function MovieDetails() {
                     title: "Oppenheimer",
                     overview: "A história do cientista americano J. Robert Oppenheimer e o seu papel no desenvolvimento da bomba atômica.",
                     poster_path: "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-                    vote_average: 8.2,
+                    vote_average: 4.4,
                     genres: [{ id: 1, name: "Drama" }, { id: 2, name: "História" }]
                 });
                 setLoading(false);
@@ -33,31 +33,12 @@ export default function MovieDetails() {
     if (loading) {
         return <div className="container container-loading">Carregando...</div>;
     }
-
-
-    return (
+        return (
         <div className="container">
-            
-           
-            <button 
-                onClick={() => navigate("/")} 
-                style={{ 
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontFamily: 'inherit',
-                    fontSize: '1rem',
-                    
-                 
-                    display: 'block', 
-                    margin: '20px 0', 
-                    color: 'var(--color-text-primary)', 
-                    fontWeight: 'bold'
-                }}
-            >
-                ⬅ Voltar para o início
-            </button>
-
+              <button className="back-button" onClick={() => navigate("/")}>
+                
+              </button>
+              
             <MovieDetailCard movie={movie} />
             
         </div>

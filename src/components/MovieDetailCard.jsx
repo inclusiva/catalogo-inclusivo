@@ -5,8 +5,8 @@ export default function MovieDetailCard({ movie }) {
         poster_path,
         title = "Título do filme",
         overview = "Descrição não disponível",
-        vote_average,
-        genres = [],
+        vote_average = 8,
+        genres = [], 
     } = movie;
     
         const imageUrl = poster_path
@@ -25,9 +25,9 @@ export default function MovieDetailCard({ movie }) {
                 <img src="/star.svg" alt="Star Icon" className="star-icon" />
                 <span>{vote_average ? `${vote_average.toFixed(1)}/5` : 'N/A'}</span>
             </div>
-           
+        
             <div className="movie-genres">
-               {genres.length ? (
+            {genres.length ? (
                     genres.map((g) => (
                         <span key={g.id || g.name} className="movie-genre">{g.name}</span>
                     ))
