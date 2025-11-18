@@ -1,4 +1,4 @@
-import { LANGUAGES } from "../constants/language";
+import LANGUAGES from "../constants/language";
 import api from ".";
 
 

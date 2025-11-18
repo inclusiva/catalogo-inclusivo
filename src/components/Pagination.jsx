@@ -9,7 +9,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
     return (
       <div>
         {pages.map(page => (
-          <button
+          <button className="pagButton"
               key={page}
               onClick={() => onPageChange(page)}
               style={{

@@ -1,25 +1,21 @@
 import Layout from "../layout";
 import Pagination from "../components/Pagination"
-import { fetchMovies } from "../api/fetchMovies"
+import getLatestMovies from "../api/fetchMovies"
+import { useState } from "react";
 
 function Home() {
 
-  const [Page, setPage] = useState(1);
+  const [page, setPage] = useState(1);
   const totalPages = 6;
 
-  const { getLatestMovies } = fetchMovies();
-
   const handlePagination = () => {
-
-  };
+    setPage(currentPage)
+  }
 
   return (
     <>
-        <h1> Catálogo Inclusiva </h1>
         <Pagination
-        currentPage={setPage} 
-        totalPages={totalPages}
-        onPageChange={handlePagination} />
+        totalPages={totalPages} />
     </>
   );
 }

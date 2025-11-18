@@ -161,3 +161,47 @@ html, body {
   width: 100%;
   max-width: 100%;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background: var(--gradient);
+}
+
+.buttonContainer {
+  display: flex;
+  min-width: 140px;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 45px;
+  padding: 5px;
+}
+
+.themeButton, .langButton {
+  display: flex;
+  background: transparent;
+  border: 2px solid #ffffff;;
+  cursor: pointer;
+  height: var(--height-button);
+  width: var(--width-button);
+  align-items: center;
+  justify-content: center;
+}
+
+.themeButton img {
+  width: 90%;
+}
+
+.langButton h3 {
+  color: #ffffff;
+}
+
+.pagButton {
+  
+  border: none;
+  background-color: var(--color-bg-white);
+}
