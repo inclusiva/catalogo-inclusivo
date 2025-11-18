@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom"; 
-
-import "../components/MovieDetailCard.css";
 import MovieDetailCard from "../components/MovieDetailCard";
 
-export function MovieDetails() {
+export default function MovieDetails() {
     const { id } = useParams();
     const navigate = useNavigate(); 
 
@@ -33,7 +31,7 @@ export function MovieDetails() {
   
 
     if (loading) {
-        return <div className="container" style={{ color: 'var(--color-text-primary)' }}>Carregando...</div>;
+        return <div className="container container-loading">Carregando...</div>;
     }
 
 

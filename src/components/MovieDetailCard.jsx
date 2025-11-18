@@ -1,5 +1,3 @@
-import "./MovieDetailCard.css";
-
 export default function MovieDetailCard({ movie }) {
     if (!movie) return null;
 
