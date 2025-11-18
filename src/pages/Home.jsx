@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getLatestMovies } from "../api/fetchMovies";
 import LANGUAGES from "../constants/language";
 import "../css/global.css";
+import RecommendationList from "../components/RecommendationList";
 export default function Home() {
   const [movieList, setMovieList] = useState([]);
 
@@ -23,13 +24,16 @@ export default function Home() {
     fetchMovieList();
   }, []);
 
+
   return (
-    <div className="cards-container">
-      {
-      movieList.map((item) => {
-        return <MovieCard movie={item} />;
-      })
-      }
-    </div>
+    <>
+      <div className="cards-container">
+        {
+        movieList.map((item) => {
+          return <MovieCard movie={item} />;
+        })
+        }
+      </div>
+    </>
   );
 }

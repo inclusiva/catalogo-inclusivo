@@ -26,8 +26,8 @@ export default function MovieCard({ movie, onClick }) {
       <div className="card" onClick={moviePageHandle}>
         <img src={imageUrl} alt="pôster" className="img-test" />
         <div className="card-footer">
-          <p>{title}</p>
-          <p>{nota}</p>
+          <p className="movie-title">{title}</p>
+          <p className="movie-av">{nota}/5</p>
         </div>
       </div>
   );

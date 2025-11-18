@@ -161,6 +161,7 @@ html, body {
   width: 100%;
   max-width: 100%;
 }
+/*  */
 
 .cards-container {
   display: flex;
@@ -195,6 +196,20 @@ html, body {
   z-index: 99;
 }
 
+
+.movie-title {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: var(--spacing-8);
+}
+
+.movie-av {
+  margin: var(--spacing-8);
+}
+
+
 .img-test {
   width: var(--width-card);
 }
@@ -212,3 +227,9 @@ html, body {
   }
 }
 
+/*  */
+
+.recommendation-title {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xl);
+}
