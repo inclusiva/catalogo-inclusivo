@@ -10,18 +10,6 @@
     margin: var(--spacing-24) auto;
 }
 
-@media (max-width: 768px) {
-.movie-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    }
-
-.movie-info {
-    align-items: center;
-    }
-}
-
 .movie-info {
     display: flex;
     flex-direction: column;
@@ -104,8 +92,22 @@
     align-items: center;
     gap: var(--gap-xs);
 }
+
 .back-button:hover {
     color: var(--color-principal-hover);
     transform: translateX(-3px);
+}
+
+
+@media (max-width: 768px) {
+.movie-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    }
+
+.movie-info {
+    align-items: center;
+    }
 }
 

@@ -2,8 +2,6 @@
   width: var(--width-container);
   background-color: var(--color-card-background);
   margin: auto;
-  
-  
 }
 .banner-titulo {
  padding: 5px;

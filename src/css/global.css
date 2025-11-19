@@ -122,7 +122,6 @@
 [data-theme="dark"] {
 
   /* === CORES (Modo Escuro) === */
- 
     --background-color: #3F3C41; /*Cor de fundo*/
   --color-footer: #525252; /* Rodape*/ 
   --color-card-base: #0F56A2; /* Espaço de descrição do card */
@@ -168,12 +167,53 @@ header {
   background: var(--gradient);
 }
 
+.container {
+  width: var(--width-container);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.container-loading {
+  color: var(--color-text-primary);
+}
+
+.main-container {
+  max-width: var(--width-container);
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.layout {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: var(--font-size-base);
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-bg {
+  background-image: var(--gradient);
+  color: var(--color-text-header);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xl) 0;
+}
+
 .buttonContainer {
   display: flex;
   min-width: 140px;
-  padding: var(--spacing-sm);
-  align-items: center;
-  justify-content: center;
+  gap: var(--gap-md);
 }
 
 .logo {
@@ -205,12 +245,70 @@ header {
   border: none;
   background-color: var(--color-bg-white);
 }
-.container {
-  width: var(--width-container);
-  max-width: 100%;
-  margin: 0 auto;
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-xl); 
+  justify-content: center; 
+  max-width: var(--width-container);
 }
 
-.container-loading {
+.card {
+  width: var(--width-card);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-card-backgroung);
+  box-shadow: var(--shadow-xl);
+  flex: 0 0 auto;
+}
+
+.card-footer {
+  background-color: var(--color-card-base);
+  width: var(--width-card);
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--color-text-header);
+  font-size: var(--font-weight-bold); 
+  z-index: 99;
+}
+
+
+.movie-title {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: var(--spacing-8);
+}
+
+.movie-av {
+  margin: var(--spacing-8);
+}
+
+
+.img-test {
+  width: var(--width-card);
+}
+
+.card:hover {
+  .card-footer {
+    background-color: var(--color-principal-hover);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: var(--width-card);
+    height: auto;
+  }
+}
+
+.recommendation-title {
   color: var(--color-text-primary);
+  font-size: var(--font-size-xl);
 }

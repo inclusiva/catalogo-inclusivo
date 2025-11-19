@@ -1,0 +1,26 @@
+import { useNavigate } from "react-router-dom";
+import "../css/global.css";
+
+export default function MovieCard({ movie, onClick }) {
+  const navigate = useNavigate();
+  const { title, id, poster_path, vote_average } = movie;
+  console.log(movie);
+  const nota = (vote_average / 2).toFixed(1);
+
+  const imageUrl = movie.poster_path
+    ? `https://image.tmdb.org/t/p/w500${poster_path}`
+    : "/no-image.png";
+
+  function moviePageHandle(id) {
+    navigate(`/movie/${id}`);
+  }
+  return (
+      <div className="card" onClick={moviePageHandle}>
+        <img src={imageUrl} alt="pôster" className="img-test" />
+        <div className="card-footer">
+          <p className="movie-title">{title}</p>
+          <p className="movie-av">{nota}/5</p>
+        </div>
+      </div>
+  );
+}
