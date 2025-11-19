@@ -4,7 +4,7 @@
   --background-color: #f1e5e7; /*Cor de fundo*/
   --color-footer: #ef0b5d; /* Rodape*/ 
   --color-card-base: #ef0b5d; /* Espaço de descrição do card */
-  --color-card-backgroung: #fae1c8; /* Fundo do card */
+  --color-card-background: #fae1c8; /* Fundo do card */
   --color-grad-begin: #ED911F; /* Cor de inicio do gradient*/
   --color-grad-end: #EF0B5D; /* Cor final do gradient*/
   --color-principal-hover: #C2185B; /* Ao acessar botão */
@@ -126,7 +126,7 @@
     --background-color: #3F3C41; /*Cor de fundo*/
   --color-footer: #525252; /* Rodape*/ 
   --color-card-base: #0F56A2; /* Espaço de descrição do card */
-  --color-card-backgroung: #1E1E1E; /* Fundo do card */
+  --color-card-background: #1E1E1E; /* Fundo do card */
   --color-grad-begin: #0F56A2; /* Cor de inicio do gradient*/
   --color-grad-end: #EF0B5D; /* Cor final do gradient*/
   --color-principal-hover: #0F56A2; /* Ao acessar botão */
@@ -204,4 +204,13 @@ header {
   color: var(--color-text-primary);
   border: none;
   background-color: var(--color-bg-white);
+}
+.container {
+  width: var(--width-container);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.container-loading {
+  color: var(--color-text-primary);
 }

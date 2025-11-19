@@ -1,25 +1,28 @@
-import Layout from "../layout";
+import SearchBanner from "../components/SearchBanner";
 import Pagination from "../components/Pagination"
-import getLatestMovies from "../api/fetchMovies"
 import { useState } from "react";
 
-function Home() {
-
+export default function Home() {
+  
   const [page, setPage] = useState(1);
   const totalPages = 6;
 
   const handlePagination = (currentPage) => {
     setPage(currentPage)
   }
-
   return (
     <>
-        <Pagination
+    <h1>oi from home</h1>
+    <SearchBanner 
+    value={"input"} 
+    onChange={()=>{console.log("onchange")}}
+    onClick={()=>{console.log("onclick")}}
+    />
+    <Pagination
         currentPage={page}
         onPageChange={handlePagination}
         totalPages={totalPages} />
-    </>
-  );
-}
 
-export default Home;
+    </> 
+  )
+}
