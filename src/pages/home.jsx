@@ -9,7 +9,6 @@ export default function Home() {
     onChange={()=>{console.log("onchange")}}
     onClick={()=>{console.log("onclick")}}
     />
-
     </> 
   )
 }
