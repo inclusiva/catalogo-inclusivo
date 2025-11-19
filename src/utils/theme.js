@@ -25,3 +25,4 @@ export function toggleTheme() {
 }
 
 
+export default {saveTheme, recoverTheme, toggleTheme };
