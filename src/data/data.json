@@ -1,0 +1,64 @@
+{
+  "pt-BR": {
+    "searchBanner": {
+      "title": "Bem vindo(a)",
+      "subtitle": "Milhões de filmes para descobrir. Explore já",
+      "placeholder": "digite o nome de um filme",
+      "button": "Buscar"
+    },
+    "recommendationList": {
+      "title": "Filmes recomendados baseado na sua pesquisa",
+      "noRecommendations": "Desculpe, não há nenhuma recomendação no momento... :("
+    },
+    "movieDetails": {
+      "backButton": "Voltar",
+      "loading": "Carregando...",
+      "errorLoading": "Não foi possível carregar os detalhes do filme",
+      "errorSimilar": "Não foi possível carregar os filmes similares",
+      "starAlt": "Estrela"
+    },
+    "home": {
+      "searchResults": "Resultados para",
+      "movies": "Filmes",
+      "noMoviesFound": "Nenhum filme encontrado para"
+    },
+    "header": {
+      "title": "Catálogo Inclusivo",
+      "logoAlt": "logo"
+    },
+    "footer": {
+      "title": "Footer"
+    }
+  },
+  "en-US": {
+    "searchBanner": {
+      "title": "Welcome",
+      "subtitle": "Millions of movies to discover. Explore now",
+      "placeholder": "type a movie name",
+      "button": "Search"
+    },
+    "recommendationList": {
+      "title": "Recommended movies based on your search",
+      "noRecommendations": "Sorry, there are no recommendations at the moment... :("
+    },
+    "movieDetails": {
+      "backButton": "Back",
+      "loading": "Loading...",
+      "errorLoading": "Failed to load movie details",
+      "errorSimilar": "Failed to load similar movies",
+      "starAlt": "Star"
+    },
+    "home": {
+      "searchResults": "Results for",
+      "movies": "Movies",
+      "noMoviesFound": "No movies found for"
+    },
+    "header": {
+      "title": "Inclusive Catalog",
+      "logoAlt": "logo"
+    },
+    "footer": {
+      "title": "Footer"
+    }
+  }
+}

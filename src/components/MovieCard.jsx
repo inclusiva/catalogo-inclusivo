@@ -1,13 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../css/global.css";
-
-/* *
- * movie: {
- * poster_path,
- * title,
- * vote_average (0 a 10)
- * }
- */
 
 export default function MovieCard({ movie, onClick }) {
   const navigate = useNavigate();

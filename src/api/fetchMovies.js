@@ -9,7 +9,7 @@ async function getSearch  ( { language = LANGUAGES.PT_BR, page = 1, query=QUERY 
     } catch (error) {
 
     }
-};
+}; 
 
 async function getLatestMovies({ language = LANGUAGES.PT_BR, page = 1  }) {
   try {
