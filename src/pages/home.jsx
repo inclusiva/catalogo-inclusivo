@@ -8,13 +8,15 @@ function Home() {
   const [page, setPage] = useState(1);
   const totalPages = 6;
 
-  const handlePagination = () => {
+  const handlePagination = (currentPage) => {
     setPage(currentPage)
   }
 
   return (
     <>
         <Pagination
+        currentPage={page}
+        onPageChange={handlePagination}
         totalPages={totalPages} />
     </>
   );

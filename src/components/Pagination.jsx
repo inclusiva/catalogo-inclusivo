@@ -4,7 +4,9 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
 
     const pages = [];
 
-    for (let i = 1; i <= totalPages; i = i + 1) {pages.push(i)};
+    for (let i = 1; i <= totalPages; i = i + 1) {
+      pages.push(i);
+    }
 
     return (
       <div>
@@ -18,7 +20,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
               }}>
               {page}
         </button>
-        ))};
+        ))}
       </div>
     );
   };

@@ -158,8 +158,8 @@
 
 html, body {
   overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
+  width: var(--width-full);
+  max-width: var(--width-full);
 }
 
 header {
@@ -171,20 +171,20 @@ header {
 .buttonContainer {
   display: flex;
   min-width: 140px;
-  padding: 5px;
+  padding: var(--spacing-sm);
   align-items: center;
   justify-content: center;
 }
 
 .logo {
   max-width: 45px;
-  padding: 5px;
+  padding: var(--spacing-sm);
 }
 
 .themeButton, .langButton {
   display: flex;
   background: transparent;
-  border: 2px solid #ffffff;;
+  border: 2px solid #ffffff;
   cursor: pointer;
   height: var(--height-button);
   width: var(--width-button);
@@ -201,7 +201,7 @@ header {
 }
 
 .pagButton {
-  
+  color: var(--color-text-primary);
   border: none;
   background-color: var(--color-bg-white);
 }
