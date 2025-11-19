@@ -1,0 +1,111 @@
+.movie-card {
+    display: flex;
+    gap: var(--gap-20);
+    padding: var(--spacing-24);
+    background: var(--color-card-background);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    color: var(--color-text-secondary);
+    max-width: var(--width-container);
+    margin: var(--spacing-24) auto;
+}
+
+@media (max-width: 768px) {
+.movie-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    }
+
+.movie-info {
+    align-items: center;
+    }
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+    flex: 1;
+}
+
+.movie-poster {
+    width: var(--width-image);
+    max-width: 250px;
+    height: auto;
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-light-gray);
+    box-shadow: var(--shadow-sm);
+}
+
+.movie-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.movie-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-semibold);
+}
+
+.star-icon {
+    color: var(--color-rating);
+    font-size: var(--font-size-xl);
+}
+
+.rating-value {
+    font-size: var(--font-size-rating);
+}
+
+.movie-genres {
+    display: flex;
+    gap: var(--gap-sm);
+    flex-wrap: wrap;
+}
+
+.genre-tag {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--color-text-primary);
+    color: #fff;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    box-shadow: var(--shadow-xs);
+}
+
+.movie-overview {
+    margin-top: var(--spacing-md);
+    line-height: var(--line-height-normal);
+    font-size: var(--font-size-base);
+}
+
+.movie-empty {
+    text-align: center;
+    margin-top: var(--spacing-40);
+    color: var(--color-text-primary);
+}
+
+.back-button {
+    background: (color-text-primary);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-grad-begin);
+    margin: var(--spacing-20) 0;
+    transition: var(--transition-normal) var (--transition-ease);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-xs);
+}
+.back-button:hover {
+    color: var(--color-principal-hover);
+    transform: translateX(-3px);
+}
+
