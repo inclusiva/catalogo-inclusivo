@@ -6,5 +6,13 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     extensions: ['.js', '.jsx']
+  },
+  preview: {
+    port: 4173,
+    strictPort: true,
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
   }
 })

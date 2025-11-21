@@ -2,25 +2,52 @@
   width: var(--width-container);
   background-color: var(--color-card-background);
   margin: auto;
+  padding: var(--spacing-24);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
 }
+
 .banner-titulo {
- padding: 5px;
- color: var(--color-text-primary);
- font-size: var(--font-size-xl);
-}
-.banner-subtitulo {
-  margin:0;
-  padding: 2px;
   color: var(--color-text-primary);
-  font-size: var( --font-size-base);
+  font-size: var(--font-size-xl);
+}
+
+.banner-subtitulo {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
 
 }
+
 .area-busca {
-  padding:15px;
-  width: var(--width-container);
-  background-color: var( --color-card-background);
-
+  width: 100%;
+  display: flex;
+  gap: var(--gap-sm);
 }
+
 .text {
- color: var( --color-text-placeholde);
+  color: var(--color-text-placeholde);
+}
+
+.busca-input {
+  width: 85%;
+  padding: var(--spacing-md);
+  border: none;
+}
+
+.busca-botao {
+  background: var(--gradient);
+  color: var(--color-text-header);
+  border: none;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  width: 15%;
+}
+
+.busca-botao:hover {
+  opacity: 0.8;
 }
