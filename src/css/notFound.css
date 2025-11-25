@@ -1,0 +1,5 @@
+[data-theme="dark"] {
+  .img-404 {
+    filter: invert(100%);
+  }
+}
