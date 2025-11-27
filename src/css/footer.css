@@ -1,7 +1,8 @@
 
 
 .footer{
-    background-color: var(--color-footer);
+    background-color: var( --color-card-base);
     padding: 20px 0;
     text-align: center;
+    color: var(--color-text-secondary);
 }
