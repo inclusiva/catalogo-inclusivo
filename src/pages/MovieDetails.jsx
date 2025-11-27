@@ -1,59 +1,83 @@
-import RecommendationList from "../components/RecommendationList";
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import MovieDetailCard from "../components/MovieDetailCard";
+import RecommendationList from "../components/RecommendationList";
 
 export default function MovieDetails() {
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const { id } = useParams(); 
+  const navigate = useNavigate(); 
 
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const API_KEY = "63ee529c0f57058c56d659e436a2661f";
+  const BASE_URL = "https://api.themoviedb.org/3";
 
   useEffect(() => {
+    async function fetchMovieDetail() {
+      try {
+        setLoading(true);
+        setError(null);
 
-    const loadData = () => {
-      setLoading(true);
-      setTimeout(() => {
-        setMovie({
-          id: id,
-          title: "Oppenheimer",
-          overview: "A história do cientista americano J. Robert Oppenheimer e o seu papel no desenvolvimento da bomba atômica.",
-          poster_path: "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-          vote_average: 4.4,
-          genres: [{ id: 1, name: "Drama" }, { id: 2, name: "História" }]
-        });
+
+        const response = await fetch(
+          `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=pt-BR`
+        );
+
+        if (!response.ok) {
+          throw new Error("Não foi possível encontrar o filme.");
+        }
+
+        const data = await response.json();
+        setMovie(data);
+
+      } catch (err) {
+        console.error("Erro:", err);
+        setError(err.message);
+      } finally {
         setLoading(false);
-      }, 500);
-    };
+      }
+    }
 
-    loadData();
+
+    if (id) {
+        fetchMovieDetail();
+    }
   }, [id]);
 
 
   if (loading) {
-    return <div className="container container-loading">Carregando...</div>;
+    return <div className="loading">Carregando detalhes...</div>;
   }
+
+  if (error) {
+    return (
+      <div className="error-container">
+        <p>{error}</p>
+        <button className="back-button" onClick={() => navigate("/")}>
+          Voltar para Home
+        </button>
+      </div>
+    );
+  }
+
   return (
+    <div className="movie-details-page">
+      <div className="container">
+        <button className="back-button" onClick={() => navigate(-1)}>
+          &larr; Voltar
+        </button>
+        <MovieDetailCard movie={movie} />
+      </div>
 
-    <>
-      <section>
-
-        <div className="container">
-          <button className="back-button" onClick={() => navigate("/")}>Voltar</button>
-
-          <MovieDetailCard movie={movie} />
-
-        </div>
-      </section>
-      <section>
-        <div>
-          <h3 className="recommendation-title">
-            Filmes Recomendados baseado na sua pesquisa
-          </h3>
-          <RecommendationList id={1062722} />
-        </div>
-      </section>
-    </>
+      <div className="container recommendations-container">
+        <h3 className="recommendation-title">
+            Filmes Recomendados
+        </h3>
+  
+        <RecommendationList id={id} />
+      </div>
+    </div>
   );
 }

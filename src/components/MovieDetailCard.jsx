@@ -1,6 +1,85 @@
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
+export default function MovieDetails() {
+    const { id } = useParams();
+    const navigate = useNavigate();
+
+    const [movie, setMovie] = useState(null);
+    const [similarMovies, setSimilarMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+gi
+    const API_KEY = "63ee529c0f57058c56d659e436a2661f";
+    const BASE_URL = "https://api.themoviedb.org/3";
+}
+useEffect(() => {
+    async function loadData() {
+    try {
+        setLoading(true);
+        setError(null);
+
+// DETALHES
+const resMovie = await fetch(
+    `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=pt-BR` );
+
+    if (!resMovie.ok) throw new Error("Filme não encontrado.");
+const movieData = await resMovie.json();
+    setMovie(movieData);        
+
+// BUSCAR
+const resSimilar = await fetch(
+    `${BASE_URL}/movie/${id}/similar?api_key=${API_KEY}&language=pt-BR&page=1`);
+
+    if (!resSimilar.ok) throw new Error("Erro ao buscar filmes similares.");
+
+    const similarData = await resSimilar.json();
+    setSimilarMovies(similarData.results || []);
+      } catch (err) {
+    setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadData();
+  }, [id]);
+
+// CARREGANDO...
+if (loading) {
+    return <div className="loading">Carregando...</div>;
+  }
+
+
+// TESTE DE ERRO
+  if (error) {
+    return (
+      <div className="error">
+        <h2>Erro</h2>
+        <p>{error}</p>
+
+        <button className="back-button" onClick={() => navigate("/")}>
+          Voltar para Home
+        </button>
+      </div>
+    );
+  }
+
+ return (
+    <div className="movie-details-page">
+ 
+
+<button className="back-button" onClick={() => navigate(-1)}>
+</button> 
+
+
+// DETALHAR 
+<MovieDetailCard movie={movie} />
+
+
+  
 export default function MovieDetailCard({ movie }) {
     if (!movie) return null;
-
     const {
         poster_path,
         title = "Título do filme",
@@ -40,7 +119,3 @@ export default function MovieDetailCard({ movie }) {
         </section>
     );
 }
-                
-
-
-
