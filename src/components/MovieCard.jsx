@@ -4,7 +4,6 @@ import "../css/global.css";
 export default function MovieCard({ movie, onClick }) {
   const navigate = useNavigate();
   const { title, id, poster_path, vote_average } = movie;
-  console.log(movie);
   const nota = (vote_average / 2).toFixed(1);
 
   const imageUrl = movie.poster_path
@@ -15,7 +14,7 @@ export default function MovieCard({ movie, onClick }) {
     navigate(`/movie/${id}`);
   }
   return (
-      <div className="card" onClick={moviePageHandle}>
+      <div className="card" onClick={() => moviePageHandle(id)}>
         <img src={imageUrl} alt="pôster" className="img-test" />
         <div className="card-footer">
           <p className="movie-title">{title}</p>
