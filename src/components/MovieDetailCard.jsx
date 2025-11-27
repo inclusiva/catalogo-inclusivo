@@ -9,10 +9,12 @@ export default function MovieDetails() {
     const [similarMovies, setSimilarMovies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-gi
+
     const API_KEY = "63ee529c0f57058c56d659e436a2661f";
     const BASE_URL = "https://api.themoviedb.org/3";
 }
+
+//BUSCAR
 useEffect(() => {
     async function loadData() {
     try {
@@ -27,11 +29,10 @@ const resMovie = await fetch(
 const movieData = await resMovie.json();
     setMovie(movieData);        
 
-// BUSCAR
 const resSimilar = await fetch(
     `${BASE_URL}/movie/${id}/similar?api_key=${API_KEY}&language=pt-BR&page=1`);
 
-    if (!resSimilar.ok) throw new Error("Erro ao buscar filmes similares.");
+    if (!resSimilar.ok) throw new Error("Erro ao buscar filmes similares");
 
     const similarData = await resSimilar.json();
     setSimilarMovies(similarData.results || []);
@@ -50,34 +51,24 @@ if (loading) {
     return <div className="loading">Carregando...</div>;
   }
 
-
 // TESTE DE ERRO
-  if (error) {
-    return (
-      <div className="error">
-        <h2>Erro</h2>
-        <p>{error}</p>
-
-        <button className="back-button" onClick={() => navigate("/")}>
-          Voltar para Home
-        </button>
+if (erro || !filme) {
+  return (
+      <div>
+        <h2>Erro ao carregar o filme</h2>
+        <button onClick={() => navigate("/")}>Voltar para o Início</button>
       </div>
     );
   }
 
- return (
-    <div className="movie-details-page">
- 
-
-<button className="back-button" onClick={() => navigate(-1)}>
-</button> 
-
-
 // DETALHAR 
 <MovieDetailCard movie={movie} />
 
+// BOTAO VOLTAR
+<button onClick={() => navigate(-1)}> Voltar </button>
 
-  
+
+
 export default function MovieDetailCard({ movie }) {
     if (!movie) return null;
     const {
