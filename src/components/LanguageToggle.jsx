@@ -1,14 +1,17 @@
 import { toggleLanguage, restoreLanguage } from '../utils/language'
-import { LANGUAGES } from '../constants/language'
+import  LANGUAGES  from '../constants/language'
+import { useLanguage } from '../hooks/useLanguage';
 
 export default function LanguageToggle() {
 
-    const savedLanguage = restoreLanguage();
+    const savedLanguage = useLanguage();
+
+    
 
     return (
 
-        <button className="langButton" onClick={toggleLanguage()}>
-            {savedLanguage === LANGUAGES.PT_BR ? <h3>BR</h3> : <h3>US</h3>}
+        <button className="langButton" onClick={toggleLanguage}>
+            {savedLanguage === LANGUAGES.PT_BR ? "BR" : "US"}
         </button>
     )
 }

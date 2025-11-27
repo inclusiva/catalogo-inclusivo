@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { restoreLanguage } from "../utils/language";
+import {restoreLanguage}  from "../utils/language";
 
 export function useLanguage(){
   const [selectedLanguage, setSelecetedLanguage] = useState(restoreLanguage());

@@ -1,4 +1,7 @@
+
+
 export default function MovieDetailCard({ movie }) {
+
     if (!movie) return null;
 
     const {

@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import { getLatestMovies, getSimilar } from "../api/fetchMovies";
 import LANGUAGES from "../constants/language";
 import MovieCard from "./MovieCard";
+import { useTranslation } from "../hooks/useTranslation";
 
 export default function RecommendationList({ id }) {
   const [movieList, setMovieList] = useState([]);
+  const translation = useTranslation();
 
   async function fetchMovieList() {
     try {
