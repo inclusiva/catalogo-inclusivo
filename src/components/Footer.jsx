@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
-        <footer>
-            <p>Footer aqui :)</p>
+        <footer className="footer">
+              <p>© 2025 Catálogo Inclusivo. Todos os direitos reservados.</p>
         </footer>
     )
 }
