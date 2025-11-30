@@ -13,11 +13,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
         {pages.map(page => (
           <button className="pagButton"
               key={page}
-              onClick={() => onPageChange(page)}
-              style={{
-                background: currentPage === page ? "#e91e63" : "white",
-                color: currentPage === page ? "white" : "#e91e63"
-              }}>
+              onClick={() => onPageChange(page)}>
               {page}
         </button>
         ))}

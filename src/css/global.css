@@ -246,6 +246,12 @@ header {
   background-color: var(--color-bg-white);
 }
 
+.pagButton:active {
+  color: var(---color-text-header);
+  border: none;
+  background-color: var(--color-principal-hover);
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -263,6 +269,7 @@ header {
   background-color: var(--color-card-backgroung);
   box-shadow: var(--shadow-xl);
   flex: 0 0 auto;
+   color: var(--color-text-header);
 }
 
 .card-footer {
@@ -272,13 +279,13 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: var(--color-text-header);
   font-size: var(--font-weight-bold); 
   z-index: 99;
 }
 
 
 .movie-title {
+ 
   min-width: 0;
   white-space: nowrap;
   overflow: hidden;
