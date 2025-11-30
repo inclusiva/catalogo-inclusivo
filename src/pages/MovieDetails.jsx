@@ -3,10 +3,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import MovieDetailCard from "../components/MovieDetailCard";
 import RecommendationList from "../components/RecommendationList";
 import { getDetails } from "../api/fetchMovies"; 
+import { useTranslation } from "../hooks/useTranslation";
 
 export default function MovieDetails() {
-    const { id } = useParams();
-    const navigate = useNavigate();
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const translation = useTranslation();
 
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -39,9 +41,10 @@ export default function MovieDetails() {
         }
     }, [id]);
 
-    if (loading) {
-        return <div className="container-loading">Carregando detalhes...</div>;
-    }
+  if (loading) {
+    return <div className="container container-loading">{translation.loading}.</div>;
+  }
+  return (
 
     if (error || !movie) {
         return (
@@ -56,14 +59,9 @@ export default function MovieDetails() {
 
     return (
         <div className="movie-details-page">
-            <div className="container">
-                <button className="back-button" onClick={() => navigate(-1)}>
-                    &larr; Voltar
-                </button>
-                
-                <MovieDetailCard movie={movie} />
-            </div>
-
+        <div className="container">
+          <button className="back-button" onClick={() => navigate(-1)}>{translation.backButton}</button>
+          <MovieDetailCard movie={movie} />
             <div className="container recommendations-container">
                 <h3 className="recommendation-title">
                     Filmes Recomendados
