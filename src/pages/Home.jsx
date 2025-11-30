@@ -1,54 +1,59 @@
 import SearchBanner from "../components/SearchBanner";
-import Pagination from "../components/Pagination"
+import Pagination from "../components/Pagination";
 import { useState, useEffect } from "react";
-import { getLatestMovies, getSimilar } from "../api/fetchMovies";
+import { getLatestMovies } from "../api/fetchMovies";
 import MovieCard from "../components/MovieCard";
-import { useTranslation } from "../hooks/useTranslation";
-import MovieDetailCard from "../components/MovieDetailCard";
 import { useLanguage } from "../hooks/useLanguage";
 
 export default function Home() {
-  const [movieList, setMovieList] = useState([])
+  const [movieList, setMovieList] = useState([]);
   const [page, setPage] = useState(1);
   const totalPages = 6;
-  const language = useLanguage()
-  const translation = useTranslation()
+  const language = useLanguage();
 
   const handlePagination = (currentPage) => {
-    setPage(currentPage)
-  }
-
-  async function fetchMovieList() {
-    try {
-      const data = await getLatestMovies({
-        language,
-        page,
-      });
-      setMovieList(data.results);
-    } catch (error) {
-      console.log("erro: ", error);
-    }
-  }
+    setPage(currentPage);
+  };
 
   useEffect(() => {
+    async function fetchMovieList() {
+      try {
+        const data = await getLatestMovies({
+          language,
+          page,
+        });
+        if (data && data.results && Array.isArray(data.results)) {
+          setMovieList(data.results);
+        } else {
+          setMovieList([]);
+        }
+      } catch (error) {
+        console.log("erro: ", error);
+        setMovieList([]);
+      }
+    }
+
     fetchMovieList();
-  }, []);
+  }, [page, language]);
   return (
-    <>
-    <SearchBanner 
-    value={''} 
-    onChange={()=>{console.log("onchange")}}
-    onClick={()=>{console.log("onclick")}}
-    />
-    
-      {movieList.map((item) => {
-                return <MovieCard movie={item} key={item.id} />;
-              })}
-  
-    <Pagination
-        currentPage={page}
-        onPageChange={handlePagination}
-        totalPages={totalPages} />
-    </> 
-  )
+    <section className="home-container">
+      <SearchBanner
+        value={""}
+        onChange={() => {
+          console.log("onchange");
+        }}
+        onClick={() => {
+          console.log("onclick");
+        }}
+      />
+
+      <div className="movie-list-container">
+        {movieList.map((item) => {
+          return <MovieCard movie={item} key={item.id} />;
+        })}
+      </div>
+
+      <Pagination page={page} onPageChange={handlePagination} totalPages={totalPages} />
+    </section>
+  );
 }

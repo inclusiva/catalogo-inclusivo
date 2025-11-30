@@ -1,12 +1,36 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--gap-lg);
+  margin: var(--spacing-40) 0;
+}
+
+.home-container > * {
+  max-width: var(--width-container);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .banner {
-  width: var(--width-container);
+  width: 100%;
   background-color: var(--color-card-background);
-  margin: auto;
+  margin: 0;
   padding: var(--spacing-24);
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
+  align-items: center;
+}
+
+.banner-titulo,
+.banner-subtitulo,
+.area-busca {
+  max-width: var(--width-container);
+  width: 100%;
 }
 
 .banner-titulo {
@@ -18,7 +42,6 @@
   margin: 0;
   color: var(--color-text-primary);
   font-size: var(--font-size-base);
-
 }
 
 .area-busca {
@@ -50,4 +73,32 @@
 
 .busca-botao:hover {
   opacity: 0.8;
+}
+
+.movie-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-md);
+  justify-content: space-between;
+  max-width: var(--width-container);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.movie-list-container .card {
+  width: calc((100% - (4 * var(--gap-md))) / 5);
+  flex: 0 0 calc((100% - (4 * var(--gap-md))) / 5);
+  max-width: calc((100% - (4 * var(--gap-md))) / 5);
+}
+
+.movie-list-container .img-test {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-list-container .card-footer {
+  width: 100%;
+  box-sizing: border-box;
 }
