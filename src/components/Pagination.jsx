@@ -1,22 +1,21 @@
-import { useState } from "react";
+export default function Pagination({ page, totalPages, onPageChange }) {
+  const pages = [];
 
-export default function Pagination({ currentPage, totalPages, onPageChange }) {
+  for (let i = 1; i <= totalPages; i = i + 1) {
+    pages.push(i);
+  }
 
-    const pages = [];
-
-    for (let i = 1; i <= totalPages; i = i + 1) {
-      pages.push(i);
-    }
-
-    return (
-      <div>
-        {pages.map(page => (
-          <button className="pagButton"
-              key={page}
-              onClick={() => onPageChange(page)}>
-              {page}
+  return (
+    <div className="pagination-container">
+      {pages.map((pageNumber) => (
+        <button
+          className={`pagButton ${pageNumber === page ? "active" : ""}`}
+          key={pageNumber}
+          onClick={() => onPageChange(pageNumber)}
+        >
+          {pageNumber}
         </button>
-        ))}
-      </div>
-    );
-  };
+      ))}
+    </div>
+  );
+}

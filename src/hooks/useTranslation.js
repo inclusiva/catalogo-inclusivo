@@ -5,5 +5,5 @@ import LANGUAGES from "../constants/language";
 export function useTranslation(section) {
   const language = useLanguage();
 
-  return translations[language]?.[section] || translations[LANGUAGES.PT_BR]?.[section]
+  return translations[language]?.[section] || translations[LANGUAGES.PT_BR]?.[section];
 }

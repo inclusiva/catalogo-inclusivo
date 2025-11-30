@@ -4,7 +4,7 @@
   }
 }
 
-.not-found-container{
+.not-found-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,42 +14,37 @@
   gap: 20px;
 }
 
-.not-found-title{
-align-items: center;
-font-size: 10vh;
-font: bold;
- color: var(--color-text-secondary);
-
+.not-found-title {
+  align-items: center;
+  font-size: 10vh;
+  font: bold;
+  color: var(--color-text-secondary);
 }
 
-.not-found-text{
+.not-found-text {
   display: flex;
   justify-content: center;
   font-size: 5vh;
-   color: var(--color-text-secondary);
-
+  color: var(--color-text-secondary);
 }
 
-.not-found-img{
+.not-found-img {
   width: 400px;
   height: auto;
   display: flex;
   margin: 0 auto;
 }
 
-.not-found-button{
+.not-found-button {
   background-color: var(--color-card-base);
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.not-found-button a{
+.not-found-button a {
   color: var(--color-text-header);
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
-
 }
-
-

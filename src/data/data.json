@@ -15,7 +15,13 @@
       "loading": "Carregando...",
       "errorLoading": "Não foi possível carregar os detalhes do filme",
       "errorSimilar": "Não foi possível carregar os filmes similares",
-      "starAlt": "Estrela"
+      "starAlt": "Estrela",
+      "recommendationsTitle": "Filmes Recomendados",
+      "backToHome": "Voltar para Home",
+      "movieNotFound": "Erro ao carregar o filme",
+      "noGenres": "Gêneros não informados",
+      "noOverview": "Descrição não disponível",
+      "defaultTitle": "Título do filme"
     },
     "home": {
       "searchResults": "Resultados para",
@@ -46,7 +52,13 @@
       "loading": "Loading...",
       "errorLoading": "Failed to load movie details",
       "errorSimilar": "Failed to load similar movies",
-      "starAlt": "Star"
+      "starAlt": "Star",
+      "recommendationsTitle": "Recommended Movies",
+      "backToHome": "Back to Home",
+      "movieNotFound": "Error loading movie",
+      "noGenres": "Genres not informed",
+      "noOverview": "Description not available",
+      "defaultTitle": "Movie title"
     },
     "home": {
       "searchResults": "Results for",
