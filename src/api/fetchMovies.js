@@ -1,7 +1,7 @@
 import LANGUAGES from "../constants/language";
 import api from ".";
 
-async function getSearch({ language = LANGUAGES.PT_BR, page = 1, query }) {
+async function getSearch({ language = LANGUAGES.PT_BR, page = 1, query}) {
   try {
     const response = await api.get(
       `/movie/movies?language=${language}&page=${page}&query=${query}`

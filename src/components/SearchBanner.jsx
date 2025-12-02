@@ -1,6 +1,8 @@
 import { useTranslation } from "../hooks/useTranslation";
 
-function SearchBanner({ value, onClick, onChange }) {
+
+
+function SearchBanner({ value, onClick, onChange, onKeyDown }) {
   const translation = useTranslation("searchBanner");
   return (
     <section className="banner">
@@ -9,9 +11,10 @@ function SearchBanner({ value, onClick, onChange }) {
       <div className="area-busca">
         <input
           type="text"
-          placeholder={translation.placeholder} //digite o nome do filme
+          placeholder={translation.placeholder}
           value={value}
           onChange={onChange}
+          onKeyDown={onKeyDown}
           className="busca-input"
         />
         <button onClick={onClick} className="busca-botao">
