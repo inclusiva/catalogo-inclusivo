@@ -1,7 +1,7 @@
 :root {
   /* === CORES === */
   /* Cores principais */
-  --background-color: #f1e5e7;
+  --backnound-color: #f1e5e7;
   /*Cor de fundo*/
   --color-footer: #ef0b5d;
   /* Rodape*/
@@ -102,6 +102,7 @@
   --width-container: 1040px;
   --width-container-lg: 1400px;
   --width-full: 100%;
+  --width-container-responsivo: 90%;
 
   /* Alturas */
   --height-button: 40px;
@@ -229,7 +230,6 @@ header {
   font-size: var(--font-size-base);
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -354,14 +354,43 @@ header {
   opacity: 0.8;
 }
 
-@media (max-width: 480px) {
-  .card {
-    width: var(--width-card);
-    height: auto;
-  }
-}
-
 .recommendation-title {
   color: var(--color-text-primary);
   font-size: var(--font-size-xl);
+}
+
+@media (max-width: 1040px) and (min-width: 860px){
+  .main-container {
+    max-width: var(--width-container-responsivo);
+  }
+}
+
+@media (max-width: 859px) and (min-width: 480px){
+  .card {
+    width: 150px;
+    height: auto;
+  }
+  .main-container {
+     width: 90%; 
+     max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 200px;
+    height: auto;
+  }
+  .main-container {
+     width: 90%; 
+     max-width: 90%;
+     margin: 0 auto;
+  }
+}
+
+@media (max-width: 499px) {
+   .card {
+    width: 170px;
+    height: auto;
+  }
 }

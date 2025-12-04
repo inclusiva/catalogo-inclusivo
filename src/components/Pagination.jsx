@@ -1,4 +1,4 @@
-export default function Pagination({ page, totalPages, onPageChange }) {
+export default function Pagination({ page, totalPages, onPageChange, onKeyDown }) {
   const pages = [];
 
   for (let i = 1; i <= totalPages; i = i + 1) {
