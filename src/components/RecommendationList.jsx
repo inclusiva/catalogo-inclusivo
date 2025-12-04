@@ -34,11 +34,17 @@ export default function RecommendationList({ id, language = LANGUAGES.PT_BR }) {
 
   return (
     <>
-      <div className="cards-container">
-        {movieList.map((item) => {
-          return <MovieCard movie={item} key={item.id} />;
-        })}
-      </div>
+      {
+        movieList.length !== 0 ? (
+        <div className="cards-container">
+          {movieList.map((item) => {
+            return <MovieCard movie={item} key={item.id} />;
+          })}
+        </div> 
+        ) : (
+          <p>Não há recomendações para esse filme.</p>
+        )
+      }
     </>
   );
 }

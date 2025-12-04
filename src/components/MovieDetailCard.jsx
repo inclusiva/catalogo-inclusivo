@@ -4,12 +4,14 @@ import "../css/movieDetail.css";
 export default function MovieDetailCard({ movie, translation }) {
   if (!movie) return null;
 
-  const { poster_path, title, overview, vote_average = 8, genres = [] } = movie;
+  const { poster_path, title, overview, vote_average, genres = [] } = movie;
 
   const imageUrl = poster_path
+  
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
-    : "/no-poster_path.jpg";
+    : "/no-image.jpg";
 
+    const nota = vote_average ? (vote_average / 2).toFixed(1) : "0.0";
   const displayTitle = title || translation?.defaultTitle || "Título do filme";
   const displayOverview = overview || translation?.noOverview || "Descrição não disponível";
   const starAlt = translation?.starAlt || "Estrela";
@@ -24,7 +26,7 @@ export default function MovieDetailCard({ movie, translation }) {
         <div className="movie-rating-genres">
           <div className="movie-rating">
             <img src="/star.svg" alt={starAlt} className="star-icon" />
-            <span>{vote_average ? `${vote_average.toFixed(1)}/5` : "N/A"}</span>
+            <span>{nota}/5</span>
           </div>
 
           <div className="movie-genres">

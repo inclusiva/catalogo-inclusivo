@@ -1,7 +1,7 @@
 :root {
   /* === CORES === */
   /* Cores principais */
-  --background-color: #f1e5e7;
+  --backnound-color: #f1e5e7;
   /*Cor de fundo*/
   --color-footer: #ef0b5d;
   /* Rodape*/
@@ -359,18 +359,38 @@ header {
   font-size: var(--font-size-xl);
 }
 
-@media (max-width: 1040px) and (min-width: 767px){
+@media (max-width: 1040px) and (min-width: 860px){
   .main-container {
     max-width: var(--width-container-responsivo);
-    
-}
+  }
 }
 
-@media (max-width: 768px) and (min-width: 480px){
-
+@media (max-width: 859px) and (min-width: 480px){
+  .card {
+    width: 150px;
+    height: auto;
+  }
+  .main-container {
+     width: 90%; 
+     max-width: 90%;
+  }
 }
 
 @media (max-width: 480px) {
-
+  .card {
+    width: 200px;
+    height: auto;
+  }
+  .main-container {
+     width: 90%; 
+     max-width: 90%;
+     margin: 0 auto;
+  }
 }
 
+@media (max-width: 499px) {
+   .card {
+    width: 170px;
+    height: auto;
+  }
+}

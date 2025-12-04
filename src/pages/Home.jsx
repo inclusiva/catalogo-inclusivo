@@ -24,7 +24,7 @@ export default function Home() {
   };
 
   const handleSearch = () => {
-    setSearchQuery(query.trim());
+    setSearchQuery(query.trim().toLocaleLowerCase());
     setPage(1);
   }
 
